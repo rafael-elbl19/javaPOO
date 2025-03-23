@@ -33,11 +33,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.datas.executor": "Run",
     "Application.exercicioListas1.executor": "Run",
     "Application.exercicioVetores1.executor": "Run",
     "Application.exercicioVetores2.executor": "Run",
     "Application.exercicioVetores3.executor": "Run",
     "Application.listas.executor": "Run",
+    "Application.matrizes.executor": "Run",
     "Application.vetores.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
