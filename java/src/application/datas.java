@@ -1,5 +1,6 @@
 package application;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -30,6 +31,14 @@ public class datas {
 
         System.out.println("Data: " + d4.format(fmt1));
         System.out.println("Data com horário: " + d5.format(fmt2));
+
+        //Operações com data e hora
+        LocalDateTime pastWeek = d5.minusDays(7);
+        System.out.println("Semana passada: " + pastWeek.format(fmt2));
+
+        //Diferenca ente datas
+        Duration t1 = Duration.between(d5.minusDays(7), d5);
+        System.out.println("Diferença entre os dias: " + t1.toDays());
 
     }
 

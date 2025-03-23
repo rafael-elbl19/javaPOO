@@ -46,7 +46,7 @@
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RunManager">
