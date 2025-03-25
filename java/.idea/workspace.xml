@@ -34,6 +34,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.datas.executor": "Run",
+    "Application.enumeracao.executor": "Run",
     "Application.exercicioListas1.executor": "Run",
     "Application.exercicioVetores1.executor": "Run",
     "Application.exercicioVetores2.executor": "Run",
