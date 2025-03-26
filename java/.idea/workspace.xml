@@ -42,6 +42,7 @@
     "Application.listas.executor": "Run",
     "Application.matrizes.executor": "Run",
     "Application.vetores.executor": "Run",
+    "Application.workerProgram.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.codeium.enabled": "true",
@@ -56,7 +57,7 @@
       <module name="java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="application.*" />
+          <option name="PATTERN" value="entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
