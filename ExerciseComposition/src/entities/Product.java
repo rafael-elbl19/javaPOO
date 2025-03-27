@@ -1,11 +1,11 @@
 package entities;
 
-public class OrderProduct {
+public class Product {
 
     private String name;
     private Double price;
 
-    public OrderProduct(String name, Double price) {
+    public Product(String name, Double price) {
         this.name = name;
         this.price = price;
     }
@@ -25,4 +25,5 @@ public class OrderProduct {
     public void setPrice(Double price) {
         this.price = price;
     }
+
 }

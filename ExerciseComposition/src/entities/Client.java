@@ -1,14 +1,17 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class OrderClient {
+public class Client {
 
     private String name;
     private String email;
     private Date birthDate;
 
-    public OrderClient(String name, String email, Date birthDate) {
+    SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+
+    public Client(String name, String email, Date birthDate) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
@@ -37,4 +40,6 @@ public class OrderClient {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+
 }
