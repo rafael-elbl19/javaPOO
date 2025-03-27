@@ -8,8 +8,6 @@ import entities.enumeracao.OrderStatus;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Program {
@@ -40,7 +38,7 @@ public class Program {
         int n = sc.nextInt();
         System.out.println("--------------------------------------\n");
 
-        Order order = new Order(status, new Client(nome, email, sdf1.parse(aniversario)));
+        Order order = new Order(status, new Client(nome, email, sdf1.parse(aniversario))); //Gera um objeto order sendo enviado para um construtor que solicita status e as informacoes do cliente.
 
         for (int i = 1; i < n+1; i++) {
             System.out.println("Digite os dados do #" + i + " produto");
@@ -52,9 +50,9 @@ public class Program {
             System.out.print("Quantidade: ");
             Integer quantidadeProduto = sc.nextInt();
             System.out.println("--------------------------------------");
-            Product p = new Product(nomeProduto, precoProduto);
-            OrderItem item = new OrderItem(quantidadeProduto, precoProduto, p);
-            order.addItems(item); //nao esquecer de adicionar o objeto na lista
+            Product p = new Product(nomeProduto, precoProduto); //Cria um produto p para controle de histórico de preço
+            OrderItem item = new OrderItem(quantidadeProduto, precoProduto, p); // Chama um objeto item pertencente a classe orderitem e passa seus valores e o objeto contido "p"
+            order.addItems(item); //adiciona o objeto item à lista order
         }
 
         System.out.println();

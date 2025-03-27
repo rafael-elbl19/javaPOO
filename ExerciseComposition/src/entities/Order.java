@@ -5,20 +5,19 @@ import entities.enumeracao.OrderStatus;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Order {
 
+    //INSTANCIAÇÕES
     private OrderStatus status;
+    private Client client;
+    private List<OrderItem> itemsList = new ArrayList<OrderItem>(); //Transforma os itens enviados para OrderItem em uma lista
 
+    //FORMATAÇÃO DE DATA
     LocalDateTime ldt1 = LocalDateTime.now();
     DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     String momentoPedido = dtf1.format(ldt1);
-
-    private Client client;
-
-    private List<OrderItem> itemsList = new ArrayList<OrderItem>();
 
     public Order(OrderStatus status, Client client) {
         this.client = client;
@@ -67,7 +66,7 @@ public class Order {
         sb.append("-----HISTÓRICO DE PEDIDO:-----\n");
         sb.append("Momento do pedido: " + momentoPedido + "\n");
         sb.append("Status da ordem: " + status + "\n");
-        sb.append()
+        sb.append(client);
         for (OrderItem item : itemsList) {
             sb.append(item + "\n");
         }

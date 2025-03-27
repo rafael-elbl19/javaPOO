@@ -4,7 +4,6 @@ public class OrderItem {
 
     private Integer quantity;
     private Double price;
-
     private Product product; //
 
     public OrderItem(Integer quantity, Double price, Product product) {
@@ -42,7 +41,7 @@ public class OrderItem {
     }
 
     public String toString() {
-        return product.getName() + ", " + "Preço: " + String.format("%.2f", price) + ", Quantidade: " + quantity + ", Subtotal: " + String.format("%.2f", subTotal());
+        return product.getName() + ", " + "Preço: R$" + String.format("%.2f", price) + ", Quantidade: " + quantity + ", Subtotal: R$" + String.format("%.2f", subTotal());
     }
 
 }
