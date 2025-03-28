@@ -21,4 +21,9 @@ public class savingsAccount extends herancaAccount{
         balance += balance * interestRate;
     }
 
+    @Override
+    public void withdraw (Double amount) {
+        this.balance -= amount;
+    }
+
 }

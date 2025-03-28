@@ -26,4 +26,10 @@ public class herancaAccountBusiness extends herancaAccount{
             System.out.println("No limit for this operation");
         }
     }
+
+    @Override
+    public void withdraw (Double amount) {
+        super.withdraw(amount);
+        balance -= 2.0;
+    }
 }

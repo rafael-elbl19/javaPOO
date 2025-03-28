@@ -48,6 +48,23 @@ public class heranca {
             acc5.updateBalance();
             System.out.println("Updated!");
         }
+
+
+        /* SOBREPOSIÇÃO -------------------------------------------------------------------
+        *  Lá na classe savingsAccount recriei o método withdraw para dar um comportamento específico (isenção de taxa) quando o saque for feito da conta de savings.
+        * */
+
+        herancaAccount acc7 = new herancaAccount(1010, "Gio", 1000.0);
+        acc7.withdraw(100.00);
+        System.out.println(acc7.getBalance());
+
+        herancaAccount acc9 = new herancaAccountBusiness(3030, "Kay", 1000.0, 300.0);
+        acc9.withdraw(100.0);
+        System.out.println(acc9.getBalance());
+
+        herancaAccount acc8 = new savingsAccount(2020, "Deiu", 1000.0, 0.01);
+        acc8.withdraw(100.0);
+        System.out.println(acc8.getBalance());
     }
 
 }
