@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec5b5d39-7f5a-40ab-96ba-66b226de4b8b" name="Changes" comment="" />
+    <list default="true" id="ec5b5d39-7f5a-40ab-96ba-66b226de4b8b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ExerciseComposition/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciseComposition/.idea/material_theme_project_new.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +41,7 @@
     "Application.exercicioVetores1.executor": "Run",
     "Application.exercicioVetores2.executor": "Run",
     "Application.exercicioVetores3.executor": "Run",
+    "Application.heranca.executor": "Run",
     "Application.listas.executor": "Run",
     "Application.matrizes.executor": "Run",
     "Application.vetores.executor": "Run",
@@ -48,7 +51,7 @@
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rafae/OneDrive/Área de Trabalho/javaStudies/Java/javaExercises",
+    "last_opened_file_path": "C:/Users/rafae/OneDrive/Área de Trabalho/javaStudies/Java/java",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
