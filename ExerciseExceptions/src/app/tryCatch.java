@@ -18,6 +18,8 @@ public class tryCatch {
             System.out.println("Digite um número válido");
         } catch (InputMismatchException e2) {
             System.out.println("Não é um número");
+        } finally {
+            System.out.println("Programa finalizado ");
         }
 
         sc.close();
