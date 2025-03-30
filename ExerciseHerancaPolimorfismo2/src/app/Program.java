@@ -1,8 +1,8 @@
 package app;
 
-import entities.ImportedProduct;
 import entities.Product;
 import entities.UsedProduct;
+import entities.ImportedProduct;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,7 +22,7 @@ public class Program {
         int n = sc.nextInt();
 
         for (int i=1; i<n+1; i++) {
-            System.out.println("---Entre os dados do produto #" + i + ---);
+            System.out.println("---Entre os dados do produto #" + i + "---");
             System.out.print("Comum, usado ou importado (c/u/i): ");
             char ch = sc.next().charAt(0);
 
