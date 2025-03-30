@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ExerciseAbstractClassesAndMethods/ExerciseAbstractClassesAndMethods.iml" filepath="$PROJECT_DIR$/ExerciseAbstractClassesAndMethods/ExerciseAbstractClassesAndMethods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExerciseComposition/ExerciseComposition.iml" filepath="$PROJECT_DIR$/ExerciseComposition/ExerciseComposition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExerciseHerancaPolimorfismo/ExerciseHerancaPolimorfismo.iml" filepath="$PROJECT_DIR$/ExerciseHerancaPolimorfismo/ExerciseHerancaPolimorfismo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExerciseHerancaPolimorfismo2/ExerciseHerancaPolimorfismo2.iml" filepath="$PROJECT_DIR$/ExerciseHerancaPolimorfismo2/ExerciseHerancaPolimorfismo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/javaStudies.iml" filepath="$PROJECT_DIR$/java/javaStudies.iml" />
+    </modules>
+  </component>
+</project>
