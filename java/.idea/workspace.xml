@@ -34,12 +34,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.archives.executor": "Run",
+    "Application.archivesCaminho.executor": "Run",
     "Application.datas.executor": "Run",
     "Application.enumeracao.executor": "Run",
     "Application.exercicioListas1.executor": "Run",
     "Application.exercicioVetores1.executor": "Run",
     "Application.exercicioVetores2.executor": "Run",
     "Application.exercicioVetores3.executor": "Run",
+    "Application.files.executor": "Run",
     "Application.heranca.executor": "Run",
     "Application.listas.executor": "Run",
     "Application.matrizes.executor": "Run",
