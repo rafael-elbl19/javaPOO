@@ -1,10 +1,12 @@
 package model.entities;
 
+import model.exception.DomainException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class reservation {
+public class Reservation {
 
     private Integer roomNumber;
     private Date checkin;
@@ -12,7 +14,7 @@ public class reservation {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public reservation(Integer roomNumber, Date checkin, Date checkout) {
+    public Reservation(Integer roomNumber, Date checkin, Date checkout) {
         this.roomNumber = roomNumber;
         this.checkin = checkin;
         this.checkout = checkout;
@@ -41,7 +43,16 @@ public class reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public void updateDates(Date checkin, Date checkout) {
+    public void updateDates(Date checkin, Date checkout) throws DomainException{
+        Date now = new Date();
+        //SE O CHECKIN E O CHECKOUT FOREM ANTES DE AGORA
+        if (checkin.before(now) || checkout.before(now)) {
+            //LANCE UMA NOVA EXCEÇÃO COM ESSA MESSAGE:
+            throw new DomainException("ERRO: a data de reserva não pode ser anterior ao momento atual.");
+        }
+        if (checkout.after(checkin)) {
+            throw new DomainException("ERRO: o Check-out deve ser posterior ao Check-in");
+        }
         this.checkin = checkin;
         this.checkout = checkout;
     }
@@ -52,7 +63,7 @@ public class reservation {
         sb.append("Quarto " + roomNumber);
         sb.append(", check-in " + sdf.format(checkin));
         sb.append(", check-out " + sdf.format(checkout));
-        sb.append(" " + duration() + "nights");
+        sb.append(" " + duration() + " noite");
         return sb.toString();
     }
 }
