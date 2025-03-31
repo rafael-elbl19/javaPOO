@@ -2,10 +2,7 @@ package application;
 
 import jdk.swing.interop.SwingInterOpUtils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class archives {
@@ -26,6 +23,29 @@ public class archives {
                 line = br.readLine();
             }
 
+        } catch (IOException e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+
+        /* FILEWRITER: Escrevendo em arquivos
+        *  new FileWriter(path) - cria um novo arquivo ou recria o mesmo
+        *  new FileWriter(path, true) - acrescenta a um arquivo existente
+        *  BufferedWriter - deixa a leitura mais rápida
+        * */
+
+        //PRÉ-SETANDO O CONTEÚDO DAS LINHAS DO ARQUIVO COM VETOR
+        String[] linhas = new String[] {"Linha 1", "Linha 2", "Linha 3"};
+        String path2 = "C:\\Users\\rafae\\OneDrive\\Documentos\\out.txt";
+
+        //O TRUE GARANTE QUE UM NOVO ARQUIVO NÃO SEJA CRIADO
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path2, true))){
+            //PERCORRER O VETOR LINHAS
+            for (String linha : linhas) {
+                //ESCREVENDO O ELEMENTO DA STRING NO ARQUIVO
+                bw.write(linha);
+                //QUEBRA DE LINHA
+                bw.newLine();
+            }
         } catch (IOException e) {
             System.out.println("ERRO: " + e.getMessage());
         }
