@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec5b5d39-7f5a-40ab-96ba-66b226de4b8b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ExerciseHerancaPolimorfismo2/src/app/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExerciseHerancaPolimorfismo2/src/app/Program.java" afterDir="false" />
-    </list>
+    <list default="true" id="ec5b5d39-7f5a-40ab-96ba-66b226de4b8b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +33,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.archives.executor": "Run",
     "Application.datas.executor": "Run",
     "Application.enumeracao.executor": "Run",
     "Application.exercicioListas1.executor": "Run",
