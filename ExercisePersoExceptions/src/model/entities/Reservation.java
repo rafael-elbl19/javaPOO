@@ -14,10 +14,14 @@ public class Reservation {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Reservation(Integer roomNumber, Date checkin, Date checkout) {
+    public Reservation(Integer roomNumber, Date checkin, Date checkout) throws DomainException{
         this.roomNumber = roomNumber;
         this.checkin = checkin;
         this.checkout = checkout;
+        //PROGRAMACAO DEFENSIVA: TRATAR A EXCEÇÃO NO COMEÇO DO MÉTODO
+        if (checkin.after(checkout)) {
+            throw new DomainException("ERRO: o Check-out deve ser posterior ao Check-in");
+        }
     }
 
     public Integer getRoomNumber() {
@@ -49,9 +53,6 @@ public class Reservation {
         if (checkin.before(now) || checkout.before(now)) {
             //LANCE UMA NOVA EXCEÇÃO COM ESSA MESSAGE:
             throw new DomainException("ERRO: a data de reserva não pode ser anterior ao momento atual.");
-        }
-        if (checkout.after(checkin)) {
-            throw new DomainException("ERRO: o Check-out deve ser posterior ao Check-in");
         }
         this.checkin = checkin;
         this.checkout = checkout;

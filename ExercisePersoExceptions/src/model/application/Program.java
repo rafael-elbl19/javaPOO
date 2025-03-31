@@ -33,12 +33,17 @@ public class Program {
 
             r.updateDates(checkinAT, checkoutAT);
             System.out.println(r);
-            
+
         //TRATAMENTO DO ERRO PARSE
         } catch (ParseException e1) {
             System.out.println("Formato de data inválido!");
+        //TRATANDO ERRO COM MENSAGEM PERSONALIZADA
         } catch (DomainException e2) {
             System.out.println(e2.getMessage());
+        //CASO HAJA QUAISQUER OUTROS ERROS INESPERADOS
+        //Qualquer erro ele dará Upcasting para RuntimeException e mostrará a mensagem
+        } catch (RuntimeException e3) {
+            System.out.println("Erro inesperado. RuntimeException");
         }
         sc.close();
     }
