@@ -10,6 +10,7 @@ package model.services;
     * */
 
 import model.entities.Contrato;
+import model.entities.Parcelamentos;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -39,11 +40,13 @@ public class ContratoService {
         //CONTA QUE DÁ A PARCELA BASE
         double cotaBase = contrato.getValorContrato() / qtdParcelas;
         for (int i=1; i<=qtdParcelas; i++) {
-            double valorDaParcelaFinal = cotaBase + //COTA BASICA
-                    pagamentoOnlineService.juros(cotaBase, i) + //ADIÇÃO DOS JUROS
-                    pagamentoOnlineService.taxaDePagamento(cotaBase); //ADIÇÃO DA TAXA
+            double valorDaParcelaComJuros = cotaBase + //COTA BASICA
+                    pagamentoOnlineService.juros(cotaBase, i); //ADIÇÃO DOS JUROS
+                     //ADIÇÃO DA TAXA
+            double valorDaParcelaComJurosETaxa = valorDaParcelaComJuros + pagamentoOnlineService.taxaDePagamento(valorDaParcelaComJuros);
             //PEGA A DATA DO CONTRATO E COLOCA E INCREMENTA OS MESES CONFORME INCREMENTA O PARCELAMENTO
             Date dataDaParcelaFinal = adicionarMesesAsParcelas(contrato.getData(), i);
+            contrato.getList().add( new Parcelamentos(dataDaParcelaFinal, valorDaParcelaComJurosETaxa));
         }
     }
 

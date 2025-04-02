@@ -32,7 +32,7 @@ public class Parcelamentos {
     }
 
     public String toString() {
-        return sdf.format(dataParcelas) + " - R$" + quantia;
+        return sdf.format(dataParcelas) + " - R$" + String.format("%.2f", quantia);
     }
 
 }
