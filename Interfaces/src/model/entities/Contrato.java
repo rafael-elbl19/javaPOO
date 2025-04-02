@@ -1,5 +1,8 @@
 package model.entities;
 
+import model.services.ContratoService;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -45,5 +48,4 @@ public class Contrato {
     public List<Parcelamentos> getList() {
         return lista;
     }
-
 }

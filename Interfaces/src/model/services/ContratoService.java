@@ -23,19 +23,6 @@ public class ContratoService {
         this.pagamentoOnlineService = pagamentoOnlineService;
     }
 
-    //PROCESSO QUE VAI CRIAR A PARCELA BASE
-    public void divisorParcelas(Contrato contrato, Integer qtdParcelas) {
-
-        //CONTA QUE DÁ A PARCELA BASE
-        double cotaBase = contrato.getValorContrato() / qtdParcelas;
-        for (int i=1; i<=qtdParcelas; i++) {
-            double parcelaFinal = cotaBase + //COTA BASICA
-                    pagamentoOnlineService.juros(cotaBase, i) + //ADIÇÃO DOS JUROS
-                    pagamentoOnlineService.taxaDePagamento(cotaBase); //ADIÇÃO DA TAXA
-
-        }
-    }
-
     private Date adicionarMesesAsParcelas(Date data, int N) {
         //INSTANCIADO CALENDARIO CONFORME A DATA INFORMADA, TIPO UM CONSTRUTOR DA DATA :)
         Calendar c = Calendar.getInstance();
@@ -45,5 +32,20 @@ public class ContratoService {
         //FAZER O CALENDÁRIO VOLTAR A VALER UM DATE
         return c.getTime();
     }
+
+    //PROCESSO QUE VAI CRIAR A PARCELA BASE
+    public void divisorParcelas(Contrato contrato, Integer qtdParcelas) {
+
+        //CONTA QUE DÁ A PARCELA BASE
+        double cotaBase = contrato.getValorContrato() / qtdParcelas;
+        for (int i=1; i<=qtdParcelas; i++) {
+            double valorDaParcelaFinal = cotaBase + //COTA BASICA
+                    pagamentoOnlineService.juros(cotaBase, i) + //ADIÇÃO DOS JUROS
+                    pagamentoOnlineService.taxaDePagamento(cotaBase); //ADIÇÃO DA TAXA
+            //PEGA A DATA DO CONTRATO E COLOCA E INCREMENTA OS MESES CONFORME INCREMENTA O PARCELAMENTO
+            Date dataDaParcelaFinal = adicionarMesesAsParcelas(contrato.getData(), i);
+        }
+    }
+
 
 }
