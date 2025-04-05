@@ -1,30 +1,16 @@
 package Services;
 
-import java.security.InvalidParameterException;
+public class JurosBrasileirosService implements JurosService{
 
-public class JurosBrasileirosService {
+    private final double jurosBrasileiros;
 
-    private Double juros;
-
-    public JurosBrasileirosService(Double juros) {
-        this.juros = juros;
+    public JurosBrasileirosService(double jurosBrasileiros) {
+        this.jurosBrasileiros = jurosBrasileiros;
     }
 
-    public Double getJuros() {
-        return juros;
+    @Override
+    public double getJuros() {
+        return jurosBrasileiros;
     }
-
-    public void setJuros(Double juros) {
-        this.juros = juros;
-    }
-
-    public Double valorFinal(Double quantia, int qtdParcelas) {
-        if (qtdParcelas < 1) {
-            throw new InvalidParameterException("Deve ser igual ou maior do que um");
-        }
-        return quantia*Math.pow(1.0 + juros / 100.0, qtdParcelas);
-    }
-
-
 
 }
