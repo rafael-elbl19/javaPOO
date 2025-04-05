@@ -1,0 +1,3 @@
+Computador, 990.00
+Teclado, 59.99
+Mouse, 69.99
