@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class Main {
     /*O problema é o seguinte:
@@ -12,6 +11,7 @@ public class Main {
 
         List<Integer> myIntegers = Arrays.asList(1, 2, 3, 4);
         List<Double> myDoubles = Arrays.asList(1.2, 3.3, 4.6, 4.9);
+        List<String> myStrings = Arrays.asList("Rafael", "Isabella", "Cecília");
         List<Object> myObjects = new ArrayList<Object>();
 
         //COPIAR MINHA ORIGEM INTEIROS PARA MEU DESTINO OBJECTS
@@ -33,11 +33,20 @@ public class Main {
         }
     }
 
+    /* E SE EU QUISESSE ADICIONAR STRINGS APÓS OS DOUBLES?
+    public static <T> void copy(List<? extends T> source, List<? super T> destiny) {
+        for(T item : source) {
+            destiny.add(item);
+        }
+    }
+    *
+    * */
+
+
     public static void print(List<Object> obj) {
         for (Object o : obj) {
             System.out.print(o + " ");
         }
     }
-
 
 }
