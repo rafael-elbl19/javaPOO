@@ -1,0 +1,8 @@
+Rafael, 12
+Paulo, 15
+Rafael, 423
+Paulo, 432
+Rafael, 122
+Paulo, 43
+Rafael, 44
+Paulo, 32
