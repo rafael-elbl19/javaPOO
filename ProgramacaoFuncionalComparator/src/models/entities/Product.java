@@ -1,6 +1,6 @@
 package models.entities;
 
-public class Product implements Comparable<Product>{
+public class Product{
 
     private String name;
     private Double value;
@@ -29,10 +29,5 @@ public class Product implements Comparable<Product>{
     @Override
     public String toString() {
         return "[" + name + ", R$" + value + "]";
-    }
-
-    @Override
-    public int compareTo(Product o) {
-        return name.toUpperCase().compareTo(o.getName().toUpperCase());
     }
 }
