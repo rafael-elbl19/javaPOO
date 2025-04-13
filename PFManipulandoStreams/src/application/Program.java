@@ -21,7 +21,9 @@ public class Program {
         Stream<String> std2 = Stream.of("Rafael", "Isabella", "Cecília");
         System.out.println(Arrays.toString(std2.toArray()));
 
-
-
+        //começa em 0 e aplica a regra x+2, precisando de um limitador para não dar OutOfMemory
+        Stream<Integer> st3 = Stream.iterate(0, x -> x + 2);
+        System.out.println(Arrays.toString(st3.limit(10).toArray()));
+        
     }
 }
