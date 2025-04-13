@@ -8,16 +8,20 @@ public class Program {
     public static void main(String[] args) {
 
         //CRIA UMA LISTA IMUTÁVEL 1, 2, 3, 4, 5
+        //TRANSFORMA ESSA LISTA EM STREAM POSSIBILITANDO SEU PROCESSAMENTO DE FORMA FUNCIONAL, map, filter...
+        /*
+         * toArray retorna um array com os elementos de uma stream, convertendo a Stream<Integer> para Object[]
+         * arrays.tostring transforma esse object array em uma string [1, 2, 3, 4, 5]
+         * */
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
 
-        //TRANSFORMA ESSA LISTA EM STREAM POSSIBILITANDO SEU PROCESSAMENTO DE FORMA FUNCIONAL, map, filter...
-        Stream<Integer> st1 = list.stream();
-
-        /*
-        * toArray retorna um array com os elementos de uma stream, convertendo a Stream<Integer> para Object[]
-        * arrays.tostring transforma esse object array em uma string [1, 2, 3, 4, 5]
-        * */
+        Stream<Integer> st1 = list.stream().map(x -> x*10);
         System.out.println(Arrays.toString(st1.toArray()));
+
+        Stream<String> std2 = Stream.of("Rafael", "Isabella", "Cecília");
+        System.out.println(Arrays.toString(std2.toArray()));
+
+
 
     }
 }
