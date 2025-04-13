@@ -1,0 +1,5 @@
+Tv,589.00
+Computer,493.99
+Desk,300.00
+Chair,200.00
+Monitor,290.00
