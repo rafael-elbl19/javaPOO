@@ -1,0 +1,4 @@
+rafael,rafael.elbl@hotmail.com,7900.50
+isabella,isabella.gasso@gmail.com,5999.99
+cecilia,cecilia.gassoelbl@gmail.com,12000.00
+francisco,francisco.gassoelbl@gmail.com,15000.00
