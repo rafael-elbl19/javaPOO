@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CuringasDelimitados/src"/>
+	<classpathentry kind="src" path="ExerciseAbstractClassesAndMethods/src"/>
+	<classpathentry kind="src" path="ExerciseArquivesAndFiles/src"/>
+	<classpathentry kind="src" path="ExerciseComposition/src"/>
+	<classpathentry kind="src" path="ExerciseExceptions/src"/>
+	<classpathentry kind="src" path="ExerciseExceptions3/src"/>
+	<classpathentry kind="src" path="ExerciseHerancaPolimorfismo/src"/>
+	<classpathentry kind="src" path="ExerciseHerancaPolimorfismo2/src"/>
+	<classpathentry kind="src" path="ExercisePersoExceptions/src"/>
+	<classpathentry kind="src" path="ExercisePipelines1/src"/>
+	<classpathentry kind="src" path="ExerciseSet/src"/>
+	<classpathentry kind="src" path="ExerciseSetAndHashSet2/src"/>
+	<classpathentry kind="src" path="ExerciseSoloFunctionalProgramming/src"/>
+	<classpathentry kind="src" path="Generics/src"/>
+	<classpathentry kind="src" path="GenericsReadingArchive/src"/>
+	<classpathentry kind="src" path="hashCodeEEquals/src"/>
+	<classpathentry kind="src" path="InterfaceComparable/src"/>
+	<classpathentry kind="src" path="InterfaceDefaultMethods/src"/>
+	<classpathentry kind="src" path="Interfaces/src"/>
+	<classpathentry kind="src" path="Interfaces2/src"/>
+	<classpathentry kind="src" path="java/src"/>
+	<classpathentry kind="src" path="Java-And-Database/src"/>
+	<classpathentry kind="src" path="jdbc1/src"/>
+	<classpathentry kind="src" path="jdbc2datarecovery/src"/>
+	<classpathentry kind="src" path="jdbc3datainsert/src"/>
+	<classpathentry kind="src" path="MapExercise/src"/>
+	<classpathentry kind="src" path="MapStructure/src"/>
+	<classpathentry kind="src" path="PFConcatenarFuncoes/src"/>
+	<classpathentry kind="src" path="PFConsumer/src"/>
+	<classpathentry kind="src" path="PFFunction/src"/>
+	<classpathentry kind="src" path="PFManipulandoStreams/src"/>
+	<classpathentry kind="src" path="PFPipelines/src"/>
+	<classpathentry kind="src" path="PFPredicate/src"/>
+	<classpathentry kind="src" path="ProgramacaoFuncionalComparator/src"/>
+	<classpathentry kind="src" path="SetGenericType/src"/>
+	<classpathentry kind="src" path="TiposCuringa/src"/>
+	<classpathentry kind="src" path="TransicaoEntreTipos/src"/>
+	<classpathentry kind="src" path="untitled/src"/>
+	<classpathentry kind="lib" path="C:/java-libs/jdbc-connectors/mysql-connector-j-9.3.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="CuringasDelimitados/out/production/CuringasDelimitados"/>
+</classpath>

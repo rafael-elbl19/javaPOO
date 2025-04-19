@@ -45,10 +45,6 @@ public class Program {
 				}
 			}
 			
-			pst = conn.prepareStatement(
-					"insert into department (Name) values ('D1'), ('D2')", //ADICIONAR DOIS VALORES AO MESMO TEMPO NA TABELA department
-					Statement.RETURN_GENERATED_KEYS
-					);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
