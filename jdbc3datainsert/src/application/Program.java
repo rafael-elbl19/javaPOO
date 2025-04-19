@@ -1,35 +1,61 @@
 package application;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 
 import dbaccess.DBConnect;
 
+
 public class Program {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		Connection conn = null; //CRIA CONEXÃO
-		Statement st = null; //PERMITE UM OBJETO STATEMENT, QUE SERVE COMO UMA PONTE ENTRE O JAVA E O SQL
-		ResultSet rs= null;
+		PreparedStatement pst = null;
 		try {
 			conn = DBConnect.connectDB();
-			st = conn.createStatement(); //INSTANCIA UM OBJETO DO TIPO STATEMENT BASEADO NA CONEXÃO conn
-			rs = st.executeQuery("select * from department"); //O RS VAI RECEBER O RESULTADO VINDO DA EXECUÇÃO DO CÓDIGO DO executequery
 			
-			//FORMA DE PERCORRER O RESULTSET, ENQUANTO rs TIVER next, PRINTA O ID E O NOME
-			while(rs.next()) {
-				System.out.println(rs.getInt("Id") + ", " + rs.getString("Name"));
+			pst = conn.prepareStatement(
+					"INSERT INTO seller "
+					+ "(Name, Email, BirthDate, BaseSalary, DepartmentId)"
+					+ "VALUES "
+					+ "(?, ?, ?, ?, ?)", //PLECEHOLDER, LUGAR ONDE DEPOIS O VALOR VAI SER COLOCADO PERMITIDO PELO PREPARED STATEMENT (5 valores)
+					Statement.RETURN_GENERATED_KEYS); //RETORNA A CHAVE DO OBJETO RECEM CRIADO NA BASE DE DADOS PARA SER PEGO PELA getGeneratedKeys
+			pst.setString(1, "Pessoa Teste 3"); //ÍNDICE DO "?" E O VALOR INSERIDO
+			pst.setString(2, "pessoateste3@hotmail.com");
+			pst.setDate(3, new java.sql.Date(sdf.parse("01/01/2000").getTime()));
+			pst.setDouble(4, 8000);
+			pst.setInt(5, 4);
+			
+			int rowsAffected = pst.executeUpdate();
+
+
+			if (rowsAffected> 0) {
+				ResultSet rs = pst.getGeneratedKeys(); //PEGA A KEY ID GERADA E RETORNA UM TIPO ResultSet, POR ISSO DECLARAMOS COMO RS
+				while(rs.next()) {
+					int id = rs.getInt(1); //PEGANDO O VALOR DO ID NA COLUNA 1
+					System.out.println("Done! ID = " + id);
+				}
 			}
 			
+			pst = conn.prepareStatement(
+					"insert into department (Name) values ('D1'), ('D2')", //ADICIONAR DOIS VALORES AO MESMO TEMPO NA TABELA department
+					Statement.RETURN_GENERATED_KEYS
+					);
+			
 		} catch (SQLException e) {
-			//IMPRIME TODA A TRILHA DE CHAMADAS ATÉ O ERRO
+			e.printStackTrace();
+		} catch (ParseException e) {
 			e.printStackTrace();
 		} finally {
-			DBConnect.closeResultset(rs);
-			DBConnect.closeStatement(st);
+			DBConnect.closeStatement(pst);
 			DBConnect.closeConnection();
 		}
 		
