@@ -2,14 +2,12 @@ package application;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 
 import dbaccess.DBConnect;
+import exceptions.DbIntegrityException;
 
 
 public class Program {
@@ -34,7 +32,7 @@ public class Program {
 			System.out.println("Done! Rows Affected: " + rowsAffected);
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new DbIntegrityException(e.getMessage());
 		} finally {
 			DBConnect.closeStatement(pst);
 			DBConnect.closeConnection();
